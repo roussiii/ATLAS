@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_24_164231) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_155304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.integer "distance"
+    t.string "geocoding"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "spaceships", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
     t.integer "payload"
     t.integer "pax"
-    t.boolean "availability"
+    t.boolean "availability", default: true
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
