@@ -5,3 +5,8 @@
 <p><%= @spaceship.availability %></p>
 <p><%= @spaceship.user_id %></p>
 <p><%= @spaceship.image_url %></p>
+
+<%= link_to "Delete",
+  spaceship_path(@spaceship),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
