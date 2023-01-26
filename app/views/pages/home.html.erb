@@ -1,4 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<h2>YO!</h2>
+<% if user_signed_in? %>
+  <h2>Yo! Time for take off <%= current_user.email %></h2>
+  <% else %>
+  <h2>Stand Down.</h2>
+ <% end %>
