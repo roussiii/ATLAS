@@ -1,5 +1,7 @@
 <ul>
-<% @spaceships.each do |spaceship| %>
-<li><%= spaceship.name %></li>
-<% end %>
+  <% @spaceships.each do |spaceship| %>
+    <li><%= spaceship.name %></li>
+  <% end %>
 </ul>
+
+<%= link_to "Add a spaceship", new_spaceship_path%>
