@@ -8,14 +8,17 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag asset_path("logo.png") %>
   </head>
 
-  <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <% if user_signed_in? %>
-      <h2>Hi <%= current_user.first_name %>!</h2>
-    <% end %>
-  </body>
+  <div class="container">
+    <body>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <% if user_signed_in? %>
+        <h2>Hi <%= current_user.first_name %>!</h2>
+      <% end %>
+      <%= yield %>
+    </body>
+   </div>
 </html>
