@@ -1,6 +1,5 @@
 <div class="container">
   <ul>
-
     <% @spaceships.each do |spaceship| %>
     <li><%= link_to spaceship.name, spaceship_path(spaceship) %></li>
     <% end %>

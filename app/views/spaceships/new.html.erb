@@ -1,4 +1,4 @@
-<%= simple_form_for(@spaceship) do |f| %>
+<%= form_with model: @spaceship do |f| %>
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br>
   <%= f.label :payload %> <br>
@@ -7,6 +7,8 @@
   <%= f.number_field :pax %> <br>
   <%= f.label :availability %> <br>
   <%= f.text_field :availability %> <br>
+  <%= f.label :photo %> <br>
+  <%= f.file_field :image, accept:'image/png,image/jpeg' %> <br>
   <%= f.submit %>
 <% end %>
 
