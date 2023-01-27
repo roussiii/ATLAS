@@ -14,9 +14,10 @@ class SpaceshipsController < ApplicationController
   def create
     @spaceship = Spaceship.new(spaceship_params)
     @spaceship.user_id = current_user.id
-    @spaceship.banner_url = "hello"
+    @spaceship.banner_url = "Banner Image Missing"
+    @spaceship.image_url = "Image URL Missing"
     @spaceship.save
-    redirect_to spaceship_path(@spaceship)
+    redirect_to spaceships_path(@spaceship)
   end
 
   def update
@@ -34,6 +35,6 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :payload, :pax, :availability, :image_url)
+    params.require(:spaceship).permit(:name, :payload, :pax, :availability)
   end
 end

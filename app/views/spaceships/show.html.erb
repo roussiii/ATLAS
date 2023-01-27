@@ -1,12 +1,17 @@
-<h2><%= @spaceship.name %></h2>
-<p><%= @spaceship.banner_url %></p>
-<p><%= @spaceship.payload %></p>
-<p><%= @spaceship.pax %></p>
-<p><%= @spaceship.availability %></p>
-<p><%= @spaceship.user_id %></p>
-<p><%= @spaceship.image_url %></p>
 
-<%= link_to "Delete",
-  spaceship_path(@spaceship),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class="container">
+  <h2><%= @spaceship.name %></h2>
+  <p><%= @spaceship.banner_url %></p>
+  <p><%= @spaceship.payload %></p>
+  <p><%= @spaceship.pax %></p>
+  <p><%= @spaceship.availability %></p>
+  <p><%= @spaceship.user_id %></p>
+  <p><%= @spaceship.image_url %></p>
+
+  <%= link_to "Delete",
+    spaceship_path(@spaceship),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <%= link_to "Back", spaceships_path(@spaceship)%>
+  <%= link_to "Edit", edit_spaceship_path(@spaceship)%>
+</div>

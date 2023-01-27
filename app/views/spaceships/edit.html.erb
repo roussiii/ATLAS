@@ -1,33 +1,13 @@
-<h2>Add your spaceship</h2>
 <%= form_with model: @spaceship do |f| %>
-<p>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  </p>
-
-<p>
   <%= f.label :payload %>
   <%= f.number_field :payload %>
-  </p>
-
-<p>
   <%= f.label :pax %>
   <%= f.number_field :pax %>
-  </p>
-
-<p>
   <%= f.label :availability %>
   <%= f.text_field :availability %>
-  </p>
-
-<p>
-  <%= f.label :image %>
-  <%= f.file_field :image, accept: 'image/png,image/jpeg' %>
-  </p>
-
-<p>
   <%= f.submit %>
-  </p>
 <% end %>
 
 <%= link_to "Abort!", spaceships_path(@spaceship)%>
