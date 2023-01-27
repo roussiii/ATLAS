@@ -1,1 +1,16 @@
-<h1>test</h1>
+  # To review later if the form functions
+
+<% @booking.spaceships.each do |spaceship| %>
+    <% destination = spaceship.destination %>
+    <h2>Your booking:</h2>
+    <% destination.name %>
+    <strong>Destination:</strong>
+    <% destination.description %>
+    <strong>Price:</strong>
+    <%= destination.price %>
+    <%= form_with(url: booking_path) do |f| %>
+    <%= f.hidden_field :user_id, value: destination.id %>
+    <%= f.number_field :quantity, value: 0, min: 1 %>
+    <%= f.submit "Add to Cart" %>
+    <% end %>
+<% end %>

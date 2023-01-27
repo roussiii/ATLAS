@@ -1,9 +1,16 @@
 class Booking < ApplicationRecord
   belongs_to :user, inverse_of: :bookings
   belongs_to :spaceship, inverse_of: :bookings
+  has_many :destinations
+  has_many :spaceships, through: :destinations
   validate :no_past_booking
   validates_presence_of :departure_date, :return_date
   validate :overlaps
+
+  # To review later with package (destination.spaceship)
+  def total
+    destinations.to_a.sum {|destination| destination.total}
+  end
 
   # Bookings cannot be in the past
   def no_past_booking
