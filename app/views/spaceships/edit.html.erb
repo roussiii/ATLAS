@@ -1,4 +1,4 @@
-<%= form_with model: @spaceship do |f| %>
+<%= simple_form_for(@spaceship) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :payload %>
