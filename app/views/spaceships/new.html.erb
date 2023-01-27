@@ -7,8 +7,8 @@
   <%= f.number_field :pax %> <br>
   <%= f.label :availability %> <br>
   <%= f.text_field :availability %> <br>
-  <%= f.label :photo %> <br>
-  <%= f.file_field :image, accept:'image/png,image/jpeg' %> <br>
+  <%= f.label :image %> <br>
+  <%= f.file_field :image, accept: 'image/png,image/jpeg' %> <br>
   <%= f.submit %>
 <% end %>
 <%= link_to "Abort!", spaceships_path(@spaceship)%>
