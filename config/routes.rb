@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :spaceships
-<<<<<<< HEAD
   resources :bookings, except: [:index]
-=======
   resources :destinations
->>>>>>> 7a4b306ce848529b870032cae168a5f73e5d3555
 end
