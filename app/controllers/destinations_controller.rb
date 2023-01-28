@@ -41,5 +41,4 @@ class DestinationsController < ApplicationController
     params.require(:destination).permit(:name, :distance, :geocoding)
   end
 
-  # this is a test
 end
