@@ -12,10 +12,10 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destintion = Destination.new(destination_params)
-    @destintion.image_url = "Image URL Missing"
-    @destintion.geocoding = "Geocoding TBC"
-    @destintion.save
+    @destination = Destination.new(destination_params)
+    @destination.geocoding = "Geocoding TBC"
+    @destination.image_url = "test"
+    @destination.save!
     redirect_to destinations_path(@destination)
   end
 
@@ -38,7 +38,7 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:name, :distance, :geocoding)
+    params.require(:destination).permit(:name, :distance, :geocoding, :image_url)
   end
 
 end
