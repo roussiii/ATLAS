@@ -1,11 +1,15 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>ATLAS</h1>
-  </div>
+ </div>
+
   <p>Are you ready to take off?</p>
 
   <% if user_signed_in? %>
     <h2>World, hello <%= current_user.first_name %>.</h2>
+    <%= link_to "Spaceships", spaceships_path %>
+    <%= link_to "Destinations", destinations_path %>
     <%= link_to "Me",  edit_user_registration_path %>
+    <%= link_to "Destinations", destinations_path %>
     <br><%= link_to "About Us", about_path %>
     <% else %>
     <h2>Stand Down.</h2>
