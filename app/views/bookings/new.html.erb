@@ -1,16 +1,18 @@
   # To review later if the form functions
-
-<% @booking.each do |booking| %>
-    <% destination = destination.name %>
-    <h2>Your booking:</h2>
-    <% destination.name %>
-    <strong>Destination:</strong>
-    <% destination.description %>
-    <strong>Price:</strong>
-    <%= destination.price %>
-    <%= form_with(url: booking_path) do |f| %>
-    <%= f.hidden_field :user_id, value: destination.id %>
-    <%= f.number_field :quantity, value: 0, min: 1 %>
-    <%= f.submit "Add to Cart" %>
-    <% end %>
-<% end %>
+<div class="container">
+  <%= form_with model: @booking do |f| %>
+    <%= f.label :destination %> <br>
+    <%= f.text_field :destination %> <br>
+    <%= f.label :departure_date %> <br>
+    <%= f.date_field :departure_date %> <br>
+    <%= f.label :return_date %> <br>
+    <%= f.date_field :return_date %> <br>
+    <%= f.label :price %> <br>
+    <%= f.number_field :price %> <br> # autofill
+    <%= f.label :image %> <br>
+    <%= f.file_field :image, accept: 'image/png,image/jpeg' %> <br>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to "Abort!", bookings_path(@booking)%>
+  <%= link_to "Back to Destinations", destinations_path %>
+</div>
