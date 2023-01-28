@@ -1,13 +1,14 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>ATLAS</h1>
  </div>
-
   <p>Are you ready to take off?</p>
 
   <% if user_signed_in? %>
     <h2>World, hello <%= current_user.first_name %>.</h2>
-    <%= link_to "Me",  edit_user_registration_path %>
-    <br><%= link_to "About Us", about_path %>
+    <div class="d-flex align-items-center justify-content-left">
+      <%= link_to "Me",  edit_user_registration_path, class:"btn btn-primary lg"%>
+      <%= link_to "About Us", about_path, class:"btn btn-primary" %>
+    </div>
     <% else %>
     <h2>Stand Down.</h2>
   <% end %>

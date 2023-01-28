@@ -14,9 +14,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @desintation = Destination.find(params[:destination_id])
-    @booking.destination = @destination
-    @booking.booking_price = @destination.price #review price calculation
+    @destination = Destination.find(params[:destination_id])
+    @booking.destination_id = @destination.id
+    @booking.booking_price = @destination.price #review price calculation // no price in destination model
     @booking.user_id = current_user.id
     if @booking.save
       redirect_to bookings_path

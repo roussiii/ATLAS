@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_180454) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "departure_date"
-    t.integer "arrival_date"
+    t.integer "arrival_date" #auto complete
     t.integer "return_date"
     t.integer "price"
     t.integer "pax"
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_180454) do
   create_table "destinations", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
-    t.integer "distance"
+    t.integer "distance" #time to destination
     t.string "geocoding"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
