@@ -1,0 +1,9 @@
+<%= form_with model: @destination do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :distance %>
+  <%= f.number_field :distance %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Abort!", destinations_path(@destination)%>

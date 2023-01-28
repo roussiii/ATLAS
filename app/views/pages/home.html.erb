@@ -5,6 +5,7 @@
   <% if user_signed_in? %>
     <h2>World, hello <%= current_user.first_name %>.</h2>
     <%= link_to "Spaceships", spaceships_path %>
+    <%= link_to "Destinations", destinations_path %>
     <%= link_to "Me",  edit_user_registration_path %>
     <br><%= link_to "About Us", about_path %>
     <% else %>
