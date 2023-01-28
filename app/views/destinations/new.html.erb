@@ -1,3 +1,4 @@
+<div class="mx-auto" style="width: 400px;" >
 <%= form_with model: @destination do |f| %>
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br>
@@ -8,3 +9,4 @@
   <%= f.submit %>
 <% end %>
 <%= link_to "Abort!", destinations_path(@spaceship)%>
+</div>
