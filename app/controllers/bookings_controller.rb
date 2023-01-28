@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @desintation = Destination.find(params[:destination_id])
     @booking.destination = @destination
-    @booking.booking_price = @destination.price
+    @booking.booking_price = @destination.price #review price calculation
     @booking.user_id = current_user.id
     if @booking.save
       redirect_to bookings_path
