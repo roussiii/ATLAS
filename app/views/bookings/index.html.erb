@@ -1,0 +1,22 @@
+<div class="background">
+  <div class="container">
+  <div class="mx-auto" style="width: 400px;">
+    <div id="add-destination-box">
+      <h2>Your reserved destination:</h2>
+    </div>
+    <div id="card-bookings">
+      <div class="container">
+        <% @bookings.each do |booking| %>
+          <div class="card-booking-one">
+            <h2>Destination : <%= booking.destination.name %></h2>
+            <h2>Departure_date : <%= booking.destination.departure_date %></h2>
+            <h2>Return_date : <%= booking.destination.return_date %></h2>
+            <p>Price: <%= booking.booking_price %> MUR</p>
+            <p>Pax: <%= booking.pax %></p>
+            <p>Payload: <%= booking.payload %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
