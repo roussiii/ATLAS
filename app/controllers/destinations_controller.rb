@@ -40,4 +40,6 @@ class DestinationsController < ApplicationController
   def destination_params
     params.require(:destination).permit(:name, :distance, :geocoding)
   end
+
+  # this is a test
 end
