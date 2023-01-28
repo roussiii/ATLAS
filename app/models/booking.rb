@@ -1,11 +1,14 @@
 class Booking < ApplicationRecord
-  belongs_to :user, inverse_of: :bookings
-  belongs_to :spaceship, inverse_of: :bookings
+  belongs_to :user, foreign_key: "user_id", class_name: "User"
+  belongs_to :spaceship, foreign_key: "spaceship_id", class_name: "Spaceship"
   has_many :destinations
   has_many :spaceships, through: :destinations
-  validate :no_past_booking
+  validates :destination_id, presence: true
+  validates :user_id, presence: true
+  validates :spaceship_id, presence: true
   validates_presence_of :departure_date, :return_date
-  validate :overlaps
+  # validates :overlaps
+  # validates :no_past_booking
 
   # To review later with package (destination.spaceship)
   def total
