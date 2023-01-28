@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h2><%= @destination.name %></h2>
+  <p><%= @destination.image_url %></p>
+  <p><%= @destination.distance %></p>
+  <p><%= @destination.geocoding %></p>
+  <p><%= @destination.created_at %></p>
+  <p><%= @destination.updated_at %></p>
+
+  <%= link_to "Delete",
+    destination_path(@destination),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <%= link_to "Back", destinations_path(@destination)%>
+  <%= link_to "Edit", edit_destination_path(@destination)%>
+</div>
