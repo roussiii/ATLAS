@@ -2,29 +2,34 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
+    @destinations = Destination.all
   end
 
   def bookings
     @bookingsall = Booking.all
   end
 
+  def new
+    @booking = Booking.new
+  end
+
   def show
     @booking = Booking.find(params[:id])
-    @booking = Booking.where(booking_id = @booking.id)
   end
 
   def create
-    raise
     @booking = Booking.new(booking_params)
-    @destination = Destination.find(params[:destination_id])
-    # @booking.price = 100
-    # @booking.pax = 1
-    # @booking.payload = 10
-    # @booking.user_id = current_user.id
+    @booking.price = 100
+    @booking.pax = 1
+    @booking.payload = 10
+    @booking.user_id = current_user.id
+    @booking.destination_id = 2
+    @booking.spaceship_id = 2
+    # <li><%= @destination = Destination.find(params[:destination_id]) %></li>
     # @booking.destination_id = @destination.id
     # @booking.booking_price = @destination.price #review price calculation // no price in destination model
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path(@booking)
     else
       redirect_to root_path
     end
@@ -46,8 +51,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    raise
-    params.require(:booking).permit(:departure_date, :return_date)
-    raise
+    params.require(:booking).permit(:departure_date, :return_date, :price, :pax, :payload, :destination_id)
   end
 end
