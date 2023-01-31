@@ -1,0 +1,22 @@
+  .centered {
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    transform: translate(-40%, -40%);
+    word-spacing: 20px;
+    line-height: 130%;
+    text-align: justify;
+    color: $white;
+    font-family: $body-font;
+  }
+
+  h1{
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .banner{
+    width: 1300px;
+    height: 400px;
+    margin: 0px 0px 20px 0px;
+  }
