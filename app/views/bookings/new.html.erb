@@ -1,16 +1,11 @@
   # To review later if the form functions
-<div class="container">
+<div class="mx-auto" style="width: 400px;" >
+  <h2>Add a new booking</h2>
   <%= form_with model: @booking do |f| %>
-    <%= f.label :destination %> <br>
-    <%= f.text_field :destination %> <br>
     <%= f.label :departure_date %> <br>
-    <%= f.date_field :departure_date %> <br>
+    <%= f.number_field :departure_date %> <br>
     <%= f.label :return_date %> <br>
-    <%= f.date_field :return_date %> <br>
-    <%= f.label :price %> <br>
-    <%= f.number_field :price %> <br> # autofill
-    <%= f.label :image %> <br>
-    <%= f.file_field :image, accept: 'image/png,image/jpeg' %> <br>
+    <%= f.number_field :return_date %> <br>
     <%= f.submit %>
   <% end %>
   <%= link_to "Abort!", bookings_path(@booking)%>
