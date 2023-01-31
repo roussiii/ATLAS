@@ -6,7 +6,7 @@
           <div class="col-sm-4">
             <div class="card-deck">
               <div class="card bg-light" style="width: auto; border-colour:red">
-                <!-- <img src="../app/images/rocket_1.jpg" class="card-img-top" alt="..."> -->
+                <!--  <%= image_tag ("rocket_1.jpg") %> -->
                 <div class="card-body" style="border-color:black">
                   <h5 class="card-title"><%= spaceship.name %></h5>
                   <p class="card-text">Available: <%= spaceship.availability %></p>
@@ -14,8 +14,8 @@
                   <p class="card-text">Passengers: <%= spaceship.pax %></p>
                   <p class="card-text">Rocket description goes here.</p>
                   <p class="card-text text-muted">Last booked 3 minutes ago.</p>
-                  <a href="#" class="btn btn-light">Details <% link_to "Details", spaceship_path(spaceship) %></a>
-                  <a href="#" class="btn btn-primary">Book Now! <% link_to= root_path%></a>
+                  <%= link_to "Details", spaceship_path(spaceship), class: "btn btn-info" %>
+                  <%= link_to "Book Now!", new_booking_path, class: "btn btn-primary" %>
                 </div>
               </div>
             </div>
