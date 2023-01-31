@@ -1,10 +1,22 @@
 <div class="container">
   <ul>
     <h1>Spaceships</h1>
-    <% @spaceships.each do |spaceship| %>
-    <li><%= link_to spaceship.name, spaceship_path(spaceship) %></li>
-    <% end %>
-
+      <div class="row">
+        <% @spaceships.each do |spaceship| %>
+          <div class="col">
+            <div class="container">
+              <div class="card " style="width: 25rem;">
+                <!-- <img src="images/rocket_1.jpeg" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title"><%= spaceship.name %></h5>
+                  <p class="card-text">Rocket description goes here.</p>
+                  <a href="#" class="btn btn-primary">Details <% link_to spaceship.name, spaceship_path(spaceship) %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </ul>
 
   <%= link_to "Add a spaceship", new_spaceship_path%>

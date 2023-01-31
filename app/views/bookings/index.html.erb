@@ -1,24 +1,21 @@
-<div class="background">
-  <div class="container">
-  <div class="mx-auto" style="width: 400px;">
-    <div id="add-destination-box">
-      <h2>Your reserved destination:</h2>
-    </div>
-    <div id="card-bookings">
-      <div class="container">
-        <% @bookings.each do |booking| %>
-          <div class="card-booking-one">
-            <h2>Destination : <%= booking.destination.name %></h2>
-            <h2>Departure_date : <%= booking.destination.departure_date %></h2>
-            <h2>Return_date : <%= booking.destination.return_date %></h2>
-            <p>Price: <%= booking.booking_price %> MUR</p>
-            <p>Pax: <%= booking.pax %></p>
-            <p>Payload: <%= booking.payload %></p>
-          </div>
+<div class="container text-center">
+  <ul class="text-center">
+    <h1> <%= current_user.first_name %>, viewing your bookings</h1>
+    <% @bookings.each do |booking| %>
+      <% if (current_user.id == booking.user_id) %>
+        <li>Destination: <%= booking.id %></li>
+        <% desti_id = booking.destination_id %>
+        <% @destinations.each do |destination| %>
+          <% if booking.destination_id == destination.id %>
+            <li>Destination name: <%= destination.name %></li>
+          <% end %>
         <% end %>
-      </div>
-    </div>
-    <%= link_to "Make a new booking", new_booking_path%>
-    <%= link_to "Back to homepage", root_path %>
-  </div>
+        <li>Departure Date: <%= booking.departure_date %></li>
+        <li>Return Date: <%= booking.return_date %></li>
+        <li><%= booking.id %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <%= link_to "Make a booking", new_booking_path, class:"btn btn-primary" %>
+  <%= link_to "Back to homepage", root_path, class:"btn btn-outline-dark"%>
 </div>
