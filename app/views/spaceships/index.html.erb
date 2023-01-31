@@ -14,7 +14,7 @@
                   <p class="card-text">Passengers: <%= spaceship.pax %></p>
                   <p class="card-text">Rocket description goes here.</p>
                   <p class="card-text text-muted">Last booked 3 minutes ago.</p>
-                  <a href="#" class="btn btn-primary">Details <% link_to spaceship.name, spaceship_path(spaceship) %></a>
+                  <a href="#" class="btn btn-primary">Details <% link_to spaceships_path(spaceship[:id]) %></a>
                   <a href="#" class="btn btn-primary">Book Now! <% link_to %></a>
                 </div>
               </div>
