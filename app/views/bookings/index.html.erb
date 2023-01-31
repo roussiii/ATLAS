@@ -4,7 +4,6 @@
     <% @bookings.each do |booking| %>
       <% if (current_user.id == booking.user_id) %>
         <li>Destination: <%= booking.id %></li>
-        <% desti_id = booking.destination_id %>
         <% @destinations.each do |destination| %>
           <% if booking.destination_id == destination.id %>
             <li>Destination name: <%= destination.name %></li>
