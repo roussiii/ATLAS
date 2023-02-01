@@ -1,7 +1,54 @@
-<div class="d-flex align-items-center justify-content-center">
-  <h1>ATLAS</h1>
- </div>
-  <p>Are you ready to take off?</p>
+
+<! -- navbar -->
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="app/assets/images/logo.png">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Spaceships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Bookings</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Reviews</a>
+          </li>
+      </ul>
+            <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+<! -- navbar -->
+
+
+<! -- banner -->
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1610483155766-e50e9774ad7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=901&q=80);">
+  <div class="container">
+    <h1>Atlas</h1>
+    <p>Your next takeoff is one click-away!</p>
+    <a class="btn btn-flat" href="spaceships/new">Book now</a>
+  </div>
+</div>
+
+<! -- banner -->
+
 
   <% if user_signed_in? %>
     <h2>World, hello <%= current_user.first_name %>.</h2>
@@ -10,5 +57,44 @@
       <%= link_to "About Us", about_path, class:"btn btn-primary" %>
     </div>
     <% else %>
-    <h2>Stand Down.</h2>
   <% end %>
+
+  </div>
+
+<! -- cards -->
+<div class="container">
+    <div class="title">
+    <br>
+        <h4>Highlights</h4>
+    </div>
+    <br>
+  <div class="cards">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)">
+      Spaceships
+    </div>
+
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1665065960436-188a7471b1c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHdhbGtpbmclMjBvbiUyMG1vb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60)">
+      Destinations
+    </div>
+
+       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)">
+      Reviews
+    </div>
+  </div>
+</div>
+
+
+<! -- cards -->
+
+
+<! -- footer -->
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>
+
+<! -- footer -->
