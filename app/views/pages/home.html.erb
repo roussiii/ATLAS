@@ -15,22 +15,21 @@
     <h4>Highlights</h4>
   </div><br>
   <div class="cards">
-    <%= link_to spaceships_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260739/nasa-CpHNKNRwXps-unsplash_dgdto3.jpg)">
-        <h4>Spaceships</h4>
+        <div>
+        <%= link_to 'Spaceships', spaceships_path, :class => "btn btn-dark"%>
+        </div>
       </div>
-    <% end %>
 
-    <%= link_to destinations_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260962/peakpx_pvyazi.jpg)">
-        <h4>Destinations</h4>
+      <div>
+        <%= link_to 'Destinations', destinations_path, :class => "btn btn-dark"%>
+        </div>
       </div>
-    <% end %>
 
-    <%= link_to bookings_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260758/ju-guan-D-jLxBtEwaA-unsplash_efx5nd.jpg)">
-        <h4>Bookings</h4>
-      </div>
-    <% end %>
-  </div>
+      <div>
+        <%= link_to 'Bookings', bookings_path, :class => "btn btn-dark"%>
+        </div>
+    </div>
 </div>
