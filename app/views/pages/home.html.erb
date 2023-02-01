@@ -48,21 +48,8 @@
   </div>
 </div>
 
-<! -- banner -->
-
-
-  <% if user_signed_in? %>
-    <h2>World, hello <%= current_user.first_name %>.</h2>
-    <div class="d-flex align-items-center justify-content-left">
-      <%= link_to "Me",  edit_user_registration_path, class:"btn btn-primary lg"%>
-      <%= link_to "About Us", about_path, class:"btn btn-primary" %>
-    </div>
-    <% else %>
-  <% end %>
-
-  </div>
-
 <! -- cards -->
+
 <div class="container">
     <div class="title">
     <br>
@@ -70,17 +57,23 @@
     </div>
     <br>
   <div class="cards">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260739/nasa-CpHNKNRwXps-unsplash_dgdto3.jpg)">
-      Spaceships
-    </div>
+    <%= link_to spaceships_path do %>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260739/nasa-CpHNKNRwXps-unsplash_dgdto3.jpg)">
+        Spaceships
+      </div>
+    <% end %>
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260962/peakpx_pvyazi.jpg)">
-      Destinations
-    </div>
+    <%= link_to destinations_path do %>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260962/peakpx_pvyazi.jpg)">
+        Destinations
+      </div>
+    <% end %>
 
-       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260758/ju-guan-D-jLxBtEwaA-unsplash_efx5nd.jpg)">
-      Reviews
-    </div>
+    <%= link_to bookings_path do %>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260758/ju-guan-D-jLxBtEwaA-unsplash_efx5nd.jpg)">
+        Bookings
+      </div>
+    <% end %>
   </div>
 </div>
 
