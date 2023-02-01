@@ -1,12 +1,33 @@
 
 <div class="container">
-  <h2><%= @spaceship.name %></h2>
-  <p><%= @spaceship.banner_url %></p>
-  <p><%= @spaceship.payload %></p>
-  <p><%= @spaceship.pax %></p>
-  <p><%= @spaceship.availability %></p>
-  <p><%= @spaceship.user_id %></p>
-  <p><%= @spaceship.image_url %></p>
+  <div class="card bg-light" style="width: auto; border-colour:red">
+    <div class="row" style="border-colour:red">
+      <div class="col-6" style="width: 6;">
+        <p>INFO</p>
+          <p>Max Payload: <%= @spaceship.payload %></p>
+          <p>Passengers: <%= @spaceship.pax %></p>
+          <p>Availability: <%= @spaceship.availability %></p>
+          <p>Description</p>
+      </div>
+      <div class="col-6">
+        <%= image_tag ("https://res.cloudinary.com/dqjdq06qv/image/upload/v1675237894/rocket_1_nsqt5d.jpg"), height: 400, crop: :fill, :class => "style_image" %>
+      </div>
+    </div>
+    <div class="row text-white bg-secondary">
+      <h1>BOOK NOW!</h1>
+        # To review later if the form functions
+      <div class="mx-auto" style="width: 400px;" >
+        <h2>Add a new booking</h2>
+        <%= form_with model: @booking do |f| %>
+          <%= f.label :departure_date %> <br>
+          <%= f.number_field :departure_date %> <br>
+          <%= f.label :return_date %> <br>
+          <%= f.number_field :return_date %> <br>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <%= link_to "Delete",
     spaceship_path(@spaceship),
@@ -14,33 +35,4 @@
   %>
   <%= link_to "Back", spaceships_path(@spaceship)%>
   <%= link_to "Edit", edit_spaceship_path(@spaceship)%>
-</div>
-
-<div class="card bg-light" style="width: auto; border-colour:red">
-  <div class="row" style="border-colour:red">
-    <div class="col-6" style="width: 6;">
-      <p>INFO</p>
-        <p>Max Payload: <%= @spaceship.payload %></p>
-        <p>Passengers: <%= @spaceship.pax %></p>
-        <p>Availability: <%= @spaceship.availability %></p>
-        <p>Description</p>
-    </div>
-    <div class="col-6">
-      <p>IMG</p>
-    </div>
-  </div>
-  <div class="row text-white bg-secondary">
-    <h1>BOOK NOW!</h1>
-      # To review later if the form functions
-    <div class="mx-auto" style="width: 400px;" >
-      <h2>Add a new booking</h2>
-      <%= form_with model: @booking do |f| %>
-        <%= f.label :departure_date %> <br>
-        <%= f.number_field :departure_date %> <br>
-        <%= f.label :return_date %> <br>
-        <%= f.number_field :return_date %> <br>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </div>
 </div>
