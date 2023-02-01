@@ -1,43 +1,3 @@
-
-<! -- navbar -->
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "logo.png" %>
-    <% end %>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Spaceships", spaceships_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Destinations", destinations_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Bookings", bookings_path, class: "nav-link" %>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Reviews</a>
-          </li>
-      </ul>
-            <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
-
-
-    </div>
-  </div>
-</div>
-
-<! -- navbar -->
-
-
 <! -- banner -->
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675237893/background-image-atlas_hooexg.jpg);">
@@ -51,47 +11,26 @@
 <! -- cards -->
 
 <div class="container">
-    <div class="title">
-    <br>
-        <h4>Highlights</h4>
-    </div>
-    <br>
+  <div class="title"><br>
+    <h4>Highlights</h4>
+  </div><br>
   <div class="cards">
     <%= link_to spaceships_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260739/nasa-CpHNKNRwXps-unsplash_dgdto3.jpg)">
-        Spaceships
+        <h4>Spaceships</h4>
       </div>
     <% end %>
 
     <%= link_to destinations_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260962/peakpx_pvyazi.jpg)">
-        Destinations
+        <h4>Destinations</h4>
       </div>
     <% end %>
 
     <%= link_to bookings_path do %>
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqjdq06qv/image/upload/v1675260758/ju-guan-D-jLxBtEwaA-unsplash_efx5nd.jpg)">
-        Bookings
+        <h4>Bookings</h4>
       </div>
     <% end %>
   </div>
 </div>
-
-
-<! -- cards -->
-
-
-<! -- footer -->
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-  </div>
-    <div class="footer-copyright">
-    Made with <i class="fas fa-heart"></i> by LOKAL
-  </div>
-</div>
-
-<! -- footer -->
