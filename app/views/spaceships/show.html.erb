@@ -25,9 +25,9 @@
             <%= form_with model: @booking do |f| %>
               <h4> <%= current_user.first_name %>, enter your info.</h4>
               <%= f.label :first_name %>
-              <%= f.text_field :first_name %> <br>
-              <%= f.label :last_name %>
-              <%= f.text_field :last_name %> <br>
+              <%= f.text_field :first_name, value: current_user.first_name %> <br>
+              <%= f.label :last_name%>
+              <%= f.text_field :last_name, value: current_user.last_name %> <br>
               <%= f.label :departure_date %>
               <%= f.number_field :departure_date %>
               <%= f.label :return_date %>
