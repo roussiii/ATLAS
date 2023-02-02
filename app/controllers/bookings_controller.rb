@@ -20,8 +20,6 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.price = @spaceships.price + @destinations.price
-    @booking.pax = 1
-    @booking.payload = 10
     @booking.user_id = current_user.id
     @booking.destination_id = 2
     @booking.spaceship_id = 2
