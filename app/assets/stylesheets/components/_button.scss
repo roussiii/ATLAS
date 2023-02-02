@@ -16,3 +16,21 @@
   background: whitesmoke;
 
 }
+
+.cards .btn{
+  width: 200px;
+  height: 32px;
+  background: transparent;
+  border: 0.5px solid white;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn:hover{
+  color: grey;
+  background: whitesmoke;
+
+}
