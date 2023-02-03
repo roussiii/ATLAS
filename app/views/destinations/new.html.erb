@@ -1,13 +1,15 @@
 <div class="mx-auto" style="width: 400px;" >
-  <h2>Add a new destination</h2>
+  <h2>Add new destination</h2>
   <%= form_with model: @destination do |f| %>
-    <%= f.label :name %> <br>
+    <%= f.label :name %>
     <%= f.text_field :name %> <br>
-    <%= f.label :distance %> <br>
-    <%= f.number_field :distance %> <br>
-    <%= f.label :image_url %> <br>
-    <%= f.file_field :image_url, accept: 'image/png,image/jpeg' %> <br>
+    <%= f.label :distance %>
+    <%= f.number_field :distance, placeholder: "KM" %> <br>
+    <%= f.label :price %>
+    <%= f.number_field :price, placeholder: "$"%> <br>
+    <%= f.label :photo %> <br>
+    <%= f.file_field :photo, accept: 'image/png,image/jpeg' %> <br>
     <%= f.submit %>
   <% end %>
-  <%= link_to "Abort!", destinations_path(@spaceship)%>
+  <%= link_to "Abort!", destinations_path(@destination)%>
 </div>

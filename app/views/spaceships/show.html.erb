@@ -62,11 +62,10 @@
     </div>
   </div>
 
-  <%= link_to "Delete",
-    spaceship_path(@spaceship),
+  <%= link_to "Delete", spaceship_path(@spaceship), class: "btn btn-warning",
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-  <%= link_to "Back", spaceships_path(@spaceship)%>
-  <%= link_to "Edit", edit_spaceship_path(@spaceship)%>
+  <%= link_to "Back", spaceships_path(@spaceship), class: "btn btn-dark"%>
+  <%= link_to "Edit", edit_spaceship_path(@spaceship), class: "btn btn-primary"%>
 
 </div>
