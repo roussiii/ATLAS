@@ -4,14 +4,14 @@
     <div class="row bg-dark" style="border-colour:red">
       <div class="col-6" style="width: 6;">
         <div class="row text-light">
-          <div class="col-3">
-            <h3>Info</h3>
+          <div class="col-4">
+            <h3><%= @spaceship.name %></h3>
               <p>Max Payload: </p>
               <p>Passengers: </p>
               <p>Availability: </p>
               <p>Description: </p>
           </div>
-          <div class="col-9">
+          <div class="col-8">
             <h3> Details </h3>
             <p><%= @spaceship.payload %></p>
             <p><%= @spaceship.pax %></p>
@@ -37,7 +37,8 @@
               <%= f.label :payload %>
               <%= f.number_field :payload %> <br>
               <%= f.label :spaceship %>
-              <%= f.number_field :spaceship %> <br>
+              <%= f.text_field :spaceship, value: @spaceship.name %> <br>
+              <% @booking.spaceship_id = @spaceship.id %>
               <%= f.submit %>
             <% end %>
           </div>
