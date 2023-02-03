@@ -6,16 +6,16 @@
       <div class="card">
         <div class="card-body">
           <div class="col">
-    <%= cl_image_tag spaceship.photo.key, height: 300, width: 300, crop: :fill unless spaceship.photo.key.nil? %>
+    <%= cl_image_tag spaceship.photo.key, height: 300, width: 300, crop: :fill, class: "index-spaceship-image" unless spaceship.photo.key.nil? %>
     </div>
 
     <div class="col">
 
       <h3 class="card-title"><%= spaceship.name %></h3>
-      <p class="card-text">Available: <%= spaceship.availability %></p>
       <p class="card-text">Max Payload: <%= spaceship.payload %></p>
-      <p class="card-text">Passengers: <%= spaceship.pax %></p>
-      <p class="card-text">Rocket description goes here.</p>
+      <p class="card-text">Passenger Capacity: <%= spaceship.pax %></p>
+      <p class="card-text">Price: <%= spaceship.price %></p>
+      <p class="card-text">Description: <%= spaceship.description %></p>
       <p class="card-text text-muted">Last booked 3 minutes ago.</p>
       <br>
 
@@ -28,11 +28,10 @@
   </div>
     <% end %>
   </div>
-</div>
 
-
-<br>
-<div class="col">
-  <%= link_to "Add a spaceship", new_spaceship_path, class: "btn btn-light"%>
-  <%= link_to "Back to homepage", root_path, class: "btn btn-dark" %><br>
+  <br>
+  <div class="col">
+    <%= link_to "Add a spaceship", new_spaceship_path, class: "btn btn-primary"%>
+    <%= link_to "Back to homepage", root_path, class: "btn btn-dark" %><br>
+  </div>
 </div>
