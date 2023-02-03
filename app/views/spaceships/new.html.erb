@@ -1,8 +1,8 @@
 <div class="mx-auto" style="width: 400px;" >
 <h2>Add your spaceship</h2>
 <%= form_with model: @spaceship do |f| %>
-  <%= f.label :model %> <br>
-  <%= f.text_field :model %> <br>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
   <%= f.label :payload %> <br>
   <%= f.number_field :payload %> <br>
   <%= f.label :passenger_capacity %> <br>

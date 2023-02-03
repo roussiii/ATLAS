@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="card bg-light" style="width: auto;">
-    <div class="row bg-dark" style="border-colour:red">
+    <div class="row bg-dark card-row">
       <div class="col-6" style="width: 6;">
         <div class="row text-light">
           <div class="col-4">
@@ -19,9 +19,9 @@
             <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet, consectetur, adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
           </div>
         </div>
-        <div class="row bg-info text-center">
+        <div class="row bg-info text-center row-book-form">
           <h2>BOOK NOW!</h2>
-          <div class="mx-auto" style="width: 400px;" >
+          <div class="mx-auto book-form">
             <%= form_with model: @booking do |f| %>
               <h4> <%= current_user.first_name %>, enter your info.</h4>
               <%= f.label :first_name %>
@@ -29,7 +29,7 @@
               <%= f.label :last_name%>
               <%= f.text_field :last_name, value: current_user.last_name %> <br>
               <%= f.label :departure_date %>
-              <%= f.number_field :departure_date %>
+              <%= f.number_field :departure_date %> <br>
               <%= f.label :return_date %>
               <%= f.number_field :return_date %> <br>
               <%= f.label :pax %>
@@ -44,8 +44,8 @@
           </div>
         </div>
       </div>
-      <div class="col-6 text-center">
-        <%= image_tag ("https://res.cloudinary.com/dqjdq06qv/image/upload/v1675237894/rocket_1_nsqt5d.jpg"), style: 'display: block; margin: auto; width: 40%;' %>
+      <div class="col-6">
+        <%= image_tag ("https://res.cloudinary.com/dqjdq06qv/image/upload/v1675237894/rocket_1_nsqt5d.jpg"), style: 'display: block; margin: auto; width: 40%;', class: "style-image"%>
       </div>
     </div>
   </div>
