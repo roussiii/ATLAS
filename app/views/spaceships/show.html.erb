@@ -29,9 +29,9 @@
               <%= f.label :last_name%>
               <%= f.text_field :last_name, value: current_user.last_name %> <br>
               <%= f.label :departure_date %>
-              <%= f.number_field :departure_date %> <br>
+              <%= f.date_field :departure_date %> <br>
               <%= f.label :return_date %>
-              <%= f.number_field :return_date %> <br>
+              <%= f.date_field :return_date %> <br>
               <%= f.label :pax %>
               <%= f.number_field :pax %> <br>
               <%= f.label :payload %>
