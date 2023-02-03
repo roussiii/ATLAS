@@ -58,10 +58,9 @@
     </div>
   </div>
 
-  <%= link_to "Delete",
-    destination_path(@destination),
+  <%= link_to "Delete", destination_path(@destination), class: "btn btn-warning",
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
   <%= link_to "Back", destinations_path(@destination), class: "btn btn-dark" %>
-  <%= link_to "Edit", edit_destination_path(@destination), class: "btn-btn-primary" %>
+  <%= link_to "Edit", edit_destination_path(@destination), class: "btn btn-primary" %>
 </div>
