@@ -24,18 +24,30 @@
           <div class="mx-auto book-form">
             <%= form_with model: @booking do |f| %>
               <h4> <%= current_user.first_name %>, enter your info.</h4>
-              <%= f.label :first_name %>
-              <%= f.text_field :first_name, value: current_user.first_name %> <br>
-              <%= f.label :last_name%>
-              <%= f.text_field :last_name, value: current_user.last_name %> <br>
-              <%= f.label :departure_date %>
-              <%= f.date_field :departure_date %> <br>
-              <%= f.label :return_date %>
-              <%= f.date_field :return_date %> <br>
+              <div class= "booking-name">
+                <div class="booking-first-name">
+                  <%= f.label :first_name %>
+                  <%= f.text_field :first_name, value: current_user.first_name %>
+                </div>
+                <div class="booking-last-name">
+                  <%= f.label :last_name%>
+                  <%= f.text_field :last_name, value: current_user.last_name %> <br>
+                </div>
+              </div>
+              <div class= "booking-date">
+                <div class="booking-date-departure">
+                  <%= f.label :departure %>
+                  <%= f.date_field :departure_date %> <br>
+                </div>
+                <div class="booking-date-return">
+                  <%= f.label :return %>
+                  <%= f.date_field :return_date %> <br>
+                </div>
+              </div>
               <%= f.label :pax %>
               <%= f.number_field :pax %> <br>
               <%= f.label :payload %>
-              <%= f.number_field :payload %> <br>
+              <%= f.number_field :payload, placeholder: "KG" %> <br>
               <%= f.label :spaceship %>
               <%= f.text_field :spaceship, value: @spaceship.name %> <br>
               <% @booking.spaceship_id = @spaceship.id %>
