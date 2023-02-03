@@ -1,32 +1,38 @@
 <div class="container">
-  <ul>
-    <h1>Spaceships</h1>
-      <div class="row">
-        <% @spaceships.each do |spaceship| %>
-          <div class="col-sm-4">
-            <div class="card-deck">
-              <div class="card bg-light" style="width: auto; border-colour:red">
+  <h1>Spaceships</h1>
+    <div class="row mt-5 justify-content-md-left">
+    <% @spaceships.each do |spaceship| %>
+    <div class="col-md-auto">
+      <div class="card">
+        <div class="card-body">
+          <div class="col">
+    <%= cl_image_tag spaceship.photo.key, height: 300, width: 300, crop: :fill unless spaceship.photo.key.nil? %>
+    </div>
 
-               <%= cl_image_tag spaceship.photo.key, height: 400, crop: :fill unless spaceship.photo.key.nil? %>
+    <div class="col">
 
-                <div class="card-body" style="border-color:black">
-                  <h5 class="card-title"><%= spaceship.name %></h5>
-                  <p class="card-text">Available: <%= spaceship.availability %></p>
-                  <p class="card-text">Max Payload: <%= spaceship.payload %></p>
-                  <p class="card-text">Passengers: <%= spaceship.pax %></p>
-                  <p class="card-text">Rocket description goes here.</p>
-                  <p class="card-text text-muted">Last booked 3 minutes ago.</p>
-                  <%= link_to "Details", spaceship_path(spaceship), class: "btn btn-info" %>
-                  <%= link_to "Book Now!", new_booking_path, class: "btn btn-primary" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <h3 class="card-title"><%= spaceship.name %></h3>
+      <p class="card-text">Available: <%= spaceship.availability %></p>
+      <p class="card-text">Max Payload: <%= spaceship.payload %></p>
+      <p class="card-text">Passengers: <%= spaceship.pax %></p>
+      <p class="card-text">Rocket description goes here.</p>
+      <p class="card-text text-muted">Last booked 3 minutes ago.</p>
+      <br>
+
+      <%= link_to "Info", spaceship_path(spaceship), class: "button-outline" %>
+      <%= link_to "Book now", new_booking_path, class: "button-main" %>
+      <br>
+        </div>
       </div>
-  </ul>
+    </div>
+  </div>
+    <% end %>
+  </div>
+</div>
 
-  <%= link_to "Add a spaceship", new_spaceship_path%>
-  <%= link_to "Back to homepage", root_path %><br>
 
+<br>
+<div class="col">
+  <%= link_to "Add a spaceship", new_spaceship_path, class: "btn btn-light"%>
+  <%= link_to "Back to homepage", root_path, class: "btn btn-dark" %><br>
 </div>
