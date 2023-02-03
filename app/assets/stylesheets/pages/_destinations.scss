@@ -89,3 +89,20 @@ input[type=button], input[type=submit], input[type=reset] {
   display: flex;
   gap: 0.5rem;
 }
+
+.header-banner {
+  background-color: #333;
+  background-image: url('https://res.cloudinary.com/dqjdq06qv/image/upload/v1675456066/ivan-diaz-uW39J-CzwNs-unsplash_ubhq0r.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.centered {
+font-family:'Space Grotesk', sans-serif;
+color: white;
+text-align: center;
+font-size: 40px;
+}
