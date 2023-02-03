@@ -7,14 +7,14 @@
             <div class="card-deck">
               <div class="card bg-light" style="width: auto; border-colour:red">
 
-               <%= cl_image_tag spaceship.photo.key, height: 400, crop: :fill %>
+               <%= cl_image_tag("iqvpbwf5mn9sw48jh0wz",height: 400, crop: :fill) %>
 
                 <div class="card-body" style="border-color:black">
                   <h5 class="card-title"><%= spaceship.name %></h5>
                   <p class="card-text">Available: <%= spaceship.availability %></p>
                   <p class="card-text">Max Payload: <%= spaceship.payload %></p>
                   <p class="card-text">Passengers: <%= spaceship.pax %></p>
-                  <p class="card-text">Rocket description goes here.</p>
+                  <p class="card-text">Our luxury performance spaceship brings together performance and intuitives technologies to make your trip feel extraordinary.</p>
                   <p class="card-text text-muted">Last booked 3 minutes ago.</p>
                   <%= link_to "Details", spaceship_path(spaceship), class: "btn btn-info" %>
                   <%= link_to "Book Now!", new_booking_path, class: "btn btn-primary" %>
