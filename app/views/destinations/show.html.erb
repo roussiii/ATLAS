@@ -1,20 +1,67 @@
-
 <div class="container">
-  <h2><%= @destination.name %></h2>
-  <p><%= @destination.image_url %></p>
-  <p><%= @destination.distance %></p>
-  <%# <p><%= @destination.geocoding %></p>
-  <p><%= @destination.created_at %></p>
-  <p><%= @destination.updated_at %></p>
+  <div class="card bg-light" style="width: auto;">
+    <div class="row bg-dark card-row">
+      <div class="col-6" style="width: 6;">
+        <div class="row text-light">
+          <div class="col-4">
+            <h3><%= @destination.name %></h3>
+              <p>Distance: </p>
+              <p>Price: </p>
+              <p>Description: </p>
+          </div>
+          <div class="col-8">
+            <h3> Details </h3>
+            <p><%= @destination.distance %></p>
+            <p><%= @destination.price %></p>
+            <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet, consectetur, adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
+          </div>
+        </div>
+        <div class="row bg-info text-center row-book-form">
+          <h2>BOOK NOW!</h2>
+          <div class="mx-auto book-form">
+            <%= form_with model: @destination do |f| %>
+              <h4> <%= current_user.first_name %>, enter your info.</h4>
+              <div class= "booking-name">
+                <div class="booking-first-name">
+                  <%= f.label :first_name %>
+                  <%= f.text_field :first_name, value: current_user.first_name %>
+                </div>
+                <div class="booking-last-name">
+                  <%= f.label :last_name%>
+                  <%= f.text_field :last_name, value: current_user.last_name %> <br>
+                </div>
+              </div>
+              <div class= "booking-date">
+                <div class="booking-date-departure">
+                  <%= f.label :departure %>
+                  <%= f.date_field :departure_date %> <br>
+                </div>
+                <div class="booking-date-return">
+                  <%= f.label :return %>
+                  <%= f.date_field :return_date %> <br>
+                </div>
+              </div>
+              <%= f.label :pax %>
+              <%= f.number_field :pax %> <br>
+              <%= f.label :payload %>
+              <%= f.number_field :payload, placeholder: "KG" %> <br>
+              <%= f.label :destination %>
+              <%= f.text_field :destination, value: @destination.name %> <br>
+              <%= f.submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <%= image_tag (@destination.photo), class: "style-image"%>
+      </div>
+    </div>
+  </div>
 
-  <%= cl_image_tag @destination.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= link_to "Delete", destination_path(@destination), class: "btn btn-warning",
 
-
-  <%= link_to "Delete",
-    destination_path(@destination),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-  <%= link_to "Back", destinations_path(@destination)%>
-  <%= link_to "Edit", edit_destination_path(@destination)%>
-  <%= link_to "Book this trip", new_booking_path %>
+  <%= link_to "Back", destinations_path(@destination), class: "btn btn-dark" %>
+  <%= link_to "Edit", edit_destination_path(@destination), class: "btn btn-primary" %>
 </div>

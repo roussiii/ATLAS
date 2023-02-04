@@ -19,12 +19,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.price = @spaceships.price + @destinations.price
-    @booking.pax = 1
-    @booking.payload = 10
+    # @booking.price = @spaceships.price + @destinations.price
     @booking.user_id = current_user.id
     @booking.destination_id = 2
-    @booking.spaceship_id = 2
+    # @booking.spaceship_id = @spaceships.id
     # <li><%= @destination = Destination.find(params[:destination_id]) %></li>
     # @booking.destination_id = @destination.id
     # @booking.booking_price = @destination.price #review price calculation // no price in destination model
@@ -46,6 +44,12 @@ class BookingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   private

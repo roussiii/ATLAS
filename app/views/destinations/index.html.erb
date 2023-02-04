@@ -1,11 +1,45 @@
+<header>
+    <div class="header-banner">
+    <div class="centered">Destinations</div>
+    </div>
+    <div class="clear"></div>
+
+    </header>
+
 <div class="container">
-  <ul>
-    <h1>Destinations</h1>
+    <div class="row mt-5 justify-content-md-left">
     <% @destinations.each do |destination| %>
-    <li><%= link_to destination.name, destination_path(destination) %></li>
+    <div class="col-md-auto">
+      <div class="card">
+        <div class="card-body">
+          <div class="col">
+    <%= cl_image_tag destination.photo.key, height: 300, width: 300, crop: :fill, class: "index-card-image" unless destination.photo.key.nil? %>
+
+    </div>
+
+    <div class="col">
+
+      <h3 class="card-title"><%= destination.name %></h3>
+      <p class="card-text">Distance: <%= destination.distance %></p>
+      <p class="card-text">Price: <%= destination.price %></p>
+      <p class="card-text text-muted">Last booked 5 minutes ago.</p>
+      <br>
+
+
+      <%= link_to "Info", destination_path(destination), class: "button-outline" %>
+      <%= link_to "Choose Spaceship First", new_booking_path, class: "button-main" %>
+      <br>
+      <br>
+        </div>
+      </div>
+    </div>
+  </div>
     <% end %>
-  </ul>
-  <%= link_to "Add a destination", new_destination_path%>
-  <%= link_to "Back to homepage", root_path %>
-  <%= link_to "Make a booking", new_booking_path %>
+  </div>
+
+  <br>
+  <div class="col">
+    <%= link_to "Back to homepage", root_path, class: "btn btn-dark" %>
+    <%= link_to "Add a destination", new_destination_path, class: "btn btn-primary"%> <br>
+  </div>
 </div>

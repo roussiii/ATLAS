@@ -8,11 +8,67 @@
   transition: 0.5s ease;
   cursor: pointer;
   margin-top: 15px;
-
 }
 
 .btn:hover{
   color: black;
   background: whitesmoke;
+}
 
+.cards .btn{
+  width: 200px;
+  height: 32px;
+  background: transparent;
+  border: 0.5px solid white;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn:hover{
+  color: grey;
+  background: whitesmoke;
+}
+
+
+.button-outline{
+  background-color: transparent;
+  border: 3px;
+  border-style: solid;
+  border-radius: 30px;
+  padding: 12px 32px 12px 32px;
+  text-decoration: none;
+}
+
+.button-outline:hover{
+  background-color: transparent;
+  border: 3px;
+  border-color: green;
+  color: green;
+  border-style: solid;
+  border-radius: 30px;
+  padding: 12px 32px 12px 32px;
+  text-decoration: none;
+}
+
+.button-main{
+  background-color: blue;
+  color: white;
+  border: 3px;
+  border-style: solid;
+  border-radius: 30px;
+  padding: 12px 32px 12px 32px;
+  text-decoration: none;
+}
+
+.button-main:hover{
+  background-color: violet;
+  color: white;
+  border: 3px;
+  border-style: solid;
+  border-radius: 30px;
+  padding: 12px 32px 12px 32px;
+  text-decoration: none;
 }

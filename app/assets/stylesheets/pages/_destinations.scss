@@ -1,0 +1,108 @@
+.card{
+  max-width: 100%;
+}
+
+.card-row{
+  padding: 20px;
+}
+
+.row-book-form{
+  align-items: center;
+}
+
+.book-form{
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-body h3{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 700px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card-body p{
+  font-size: 14px;
+}
+
+.style-image{
+  width: 400px;
+  max-height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 5px 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type=number] {
+  width: 25%;
+  padding: 5px 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 70%;
+  padding: 5px 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.index-spaceship-image{
+  display: inline-block;
+    width: 100%;
+    height: 400px;
+    margin: 5px;
+    border: 3px solid rgb(87, 82, 82);
+    background-position: center center;
+    background-size: cover;
+
+}
+
+.booking-name{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.booking-date{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-banner {
+  background-color: #333;
+  background-image: url('https://res.cloudinary.com/dqjdq06qv/image/upload/v1675456066/ivan-diaz-uW39J-CzwNs-unsplash_ubhq0r.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.centered {
+font-family:'Space Grotesk', sans-serif;
+color: white;
+text-align: center;
+font-size: 40px;
+}
