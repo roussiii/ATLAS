@@ -6,6 +6,7 @@ class SpaceshipsController < ApplicationController
   def show
     @spaceship = Spaceship.find(params[:id])
     @booking = Booking.new
+    @destinations = Destination.all
   end
 
   def new
