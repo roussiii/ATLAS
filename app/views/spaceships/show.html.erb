@@ -36,7 +36,8 @@ A range of brand-new combinations further enhances the Rocket Spaceship </p>
         </div>
       </div>
       <div class="col-6 text-center">
-        <%= image_tag ("https://res.cloudinary.com/dqjdq06qv/image/upload/v1675237894/rocket_1_nsqt5d.jpg"), height: 400, crop: :fill, :class => "style_image" %>
+      <%= cl_image_tag @spaceship.photo.key, height: 300, width: 400, crop: :fill %>
+      <%# <%= CL_image_tag ("https://res.cloudinary.com/dee7e7l0i/image/upload/v1675375286/rocket_1_nsqt5d_la9ycb.jpg"), height: 400, crop: :fill, :class => "style_image" %> %>
       </div>
     </div>
   </div>
