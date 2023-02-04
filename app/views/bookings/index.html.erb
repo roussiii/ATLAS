@@ -6,7 +6,7 @@
         <li>Destination: <%= booking.id %></li>
         <% @destinations.each do |destination| %>
           <% if booking.destination_id == destination.id %>
-            <li>Destination name: <%= destination.name %></li>
+            <li>Destination name: <%= destination.id %></li>
           <% end %>
         <% end %>
         <li>Departure Date: <%= booking.departure_date %></li>
@@ -15,6 +15,10 @@
       <% end %>
     <% end %>
   </ul>
+  <%= link_to "Delete",
+    bookings_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
   <%= link_to "Make a booking", new_booking_path, class:"btn btn-primary" %>
   <%= link_to "Back to homepage", root_path, class:"btn btn-outline-dark"%>
 </div>
