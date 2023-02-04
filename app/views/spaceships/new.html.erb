@@ -1,4 +1,5 @@
 <h2>Create new spaceship</h2>
+
 <%# <form class="form-horizontal center" role="form"> %>
 <%= form_with model: @spaceship do |f| %>
   <div class="field">
@@ -16,6 +17,7 @@
     <%= f.file_field :photo, accept: 'image/png,image/jpeg' %> <br>
     <%= f.submit %>
   </div>
+
 <% end %>
 
 <br>
