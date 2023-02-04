@@ -7,7 +7,7 @@
   <p><%= @destination.created_at %></p>
   <p><%= @destination.updated_at %></p>
 
-  <%= cl_image_tag @destination.photo.key, height: 300, width: 400, crop: :fill
+  <%= cl_image_tag @destination.photo.key, height: 300, width: 400, crop: :fill %>
 
 
   <%= link_to "Delete",
