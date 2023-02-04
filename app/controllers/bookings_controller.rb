@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
     @destinations = Destination.all
+    @spaceships = Spaceship.all
   end
 
   def bookings
@@ -21,7 +22,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # @booking.price = @spaceships.price + @destinations.price
     @booking.user_id = current_user.id
-    @booking.destination_id = 2
     # @booking.spaceship_id = @spaceships.id
     # <li><%= @destination = Destination.find(params[:destination_id]) %></li>
     # @booking.destination_id = @destination.id

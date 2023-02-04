@@ -1,36 +1,45 @@
 <header>
     <div class="header-banner">
-    <div class="centered">Bookings</div>
+      <div class="centered">Bookings</div>
     </div>
     <div class="clear"></div>
 
 </header>
 
-
-<div class="col d-flex justify-content-center">
-<div class="card" style="width: 50rem;">
-<div class="container text-center">
-  <ul class="text-center">
-    <h1> <%= current_user.first_name %>, viewing your bookings</h1>
+<div class="container">
+  <div class="row mt-5 justify-content-md-left">
     <% @bookings.each do |booking| %>
-      <% if (current_user.id == booking.user_id) %>
-        <div class="card-body">
-        <p>Destination: <%= booking.id %></p>
-        <% @destinations.each do |destination| %>
-          <% if booking.destination_id == destination.id %>
-            <li>Destination name: <%= destination.id %></li>
-          <% end %>
-        <% end %>
-        <p>Departure Date: <%= booking.departure_date %></p>
-        <p>Return Date: <%= booking.return_date %></p>
-        <p><%= booking.id %></p>
-      <% end %>
+      <div class="col-md-auto">
+        <div class="card">
+          <div class="card-body">
+            <div class="col">
+              <%# <%= cl_image_tag booking.photo.key, height: 300, width: 300, crop: :fill, class: "index-spaceship-image" unless spaceship.photo.key.nil? %>
+            </div>
+
+            <div class="col">
+              <h3 class="card-title">Trip to: <%= destination.name %></h3>
+              <p class="card-text">Price: <%= booking.price %></p>
+              <p class="card-text">Departure Date: <%= booking.departure_date %></p>
+              <p class="card-text">Return Date: <%= booking.return_date %></p>
+              <p class="card-text">No. of Zozo: <%= booking.pax %></p>
+              <p class="card-text">Cargaizon allowace: <%= booking.payload %></p>
+              <p class="card-text text-muted">Last booked 3 minutes ago.</p>
+              <br>
+              <%= link_to "Info", booking_path(booking), class: "button-main" %>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
-  <%= link_to "Delete",
-    bookings_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+  </div>
+
+  <br>
+  <div class="col">
+  </div>
+</div>
+
   <%= link_to "Make a booking", new_booking_path, class:"btn btn-primary" %>
   <%= link_to "Back to homepage", root_path, class:"btn btn-outline-dark"%>
 </div>

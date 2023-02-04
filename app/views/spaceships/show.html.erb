@@ -49,6 +49,7 @@
               <select name="destination" id="destination">
                 <%= @destinations.each do |destination| %>
                   <option value="destination"><%= destination.name %></option>
+                  <%= @booking.destination_id = destination.id %>
                 <% end %>
               </select>
 
