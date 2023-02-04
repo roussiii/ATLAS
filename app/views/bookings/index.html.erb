@@ -3,34 +3,33 @@
     <div class="centered">Bookings</div>
     </div>
     <div class="clear"></div>
-
 </header>
-
-
-<div class="col d-flex justify-content-center">
-<div class="card" style="width: 50rem;">
-<div class="container text-center">
-  <ul class="text-center">
-    <h1> <%= current_user.first_name %>, viewing your bookings</h1>
+  <div class="container">
+    <div class="card">
+      <div class="card-body text-left">
+  <br>
+    <h1> Hello <%= current_user.first_name %>, view your <strong>bookings:</strong></h1>
     <% @bookings.each do |booking| %>
       <% if (current_user.id == booking.user_id) %>
-        <div class="card-body">
-        <p>Destination: <%= booking.id %></p>
+        <br>
+        <p><strong>Destination:</strong> <%= booking.id %></p>
         <% @destinations.each do |destination| %>
           <% if booking.destination_id == destination.id %>
-            <li>Destination name: <%= destination.id %></li>
+            <p><strong>Destination name:</strong> <%= destination.id %></p>
           <% end %>
         <% end %>
-        <p>Departure Date: <%= booking.departure_date %></p>
-        <p>Return Date: <%= booking.return_date %></p>
+        <p><strong>Departure Date:</strong> <%= booking.departure_date %></p>
+        <p><strong>Return Date:</strong> <%= booking.return_date %></p>
         <p><%= booking.id %></p>
       <% end %>
     <% end %>
-  </ul>
-  <%= link_to "Delete",
-    bookings_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+          </div>
+        </div>
+      </div>
+
+  <br>
+  <br>
+  <%= link_to "Delete", bookings_path(@booking), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <%= link_to "Make a booking", new_booking_path, class:"btn btn-primary" %>
   <%= link_to "Back to homepage", root_path, class:"btn btn-outline-dark"%>
 </div>
