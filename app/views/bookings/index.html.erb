@@ -17,12 +17,19 @@
             </div>
 
             <div class="col">
-              <h3 class="card-title">Trip to: <%= booking.id %></h3>
+              <h3 class="card-title">Trip to: <%= booking. %></h3>
+              <% if (bookings.destination_id == )%>
+              <%= @destinations.each do |destination| %>
+                  <option value="destination"><%= destination.name %></option>
+                  <%= @booking.destination_id = destination.id %>
+                <% end %>
+              <h3 class="card-title">Vehicle: <%= booking.spaceship_id %></h3>
               <p class="card-text">Price: <%= booking.price %></p>
               <p class="card-text">Departure Date: <%= booking.departure_date %></p>
               <p class="card-text">Return Date: <%= booking.return_date %></p>
-              <p class="card-text">No. of Zozo: <%= booking.pax %></p>
-              <p class="card-text">Cargaizon allowace: <%= booking.payload %></p>
+              <p class="card-text">Price: <%= booking.price %></p>
+              <p class="card-text">No. of Zozoz: <%= booking.pax %></p>
+              <p class="card-text">Cargaizon allowance: <%= booking.payload %></p>
               <p class="card-text text-muted">Last booked 3 minutes ago.</p>
               <br>
               <%= link_to "Info", booking_path(booking), class: "button-main" %>

@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.price = @spaceships.price + @destinations.price
+    @booking.price = @spaceships.price + @destinations.price
     @booking.user_id = current_user.id
     # @booking.spaceship_id = @spaceships.id
     # <li><%= @destination = Destination.find(params[:destination_id]) %></li>
