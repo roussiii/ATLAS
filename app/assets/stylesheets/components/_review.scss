@@ -1,0 +1,23 @@
+.review {
+  display:contents;
+  align-items:center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.review .review-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.review p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.review small {
+  color: #999999;
+  font-weight: bold;
+}
