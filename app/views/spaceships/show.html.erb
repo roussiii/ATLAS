@@ -1,26 +1,19 @@
 <div class="container">
-  <div class="card bg-light" style="width: auto;">
-    <div class="row bg-dark card-row">
-      <div class="col-6" style="width: 6;">
-        <div class="row text-light">
-          <div class="col-4">
-            <h3><%= @spaceship.name %></h3>
-              <p>Max Payload: </p>
-              <p>Passengers: </p>
-              <p>Availability: </p>
-              <p>Description: </p>
-          </div>
-          <div class="col-8">
-            <h4> Details </h4>
-            <p><%= @spaceship.payload %></p>
-            <p><%= @spaceship.pax %></p>
-            <p><%= @spaceship.availability %></p>
-            <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet, consectetur, adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
-          </div>
+  <div class="card bg-light">
+    <div class="card-row-spaceship">
+        <div class="row d-flex">
+          <div class="col">
+            <h3><strong><%= @spaceship.name %></strong></h3>
+              <p>Max Payload: <%= @spaceship.payload %></p>
+              <p>Passengers: <%= @spaceship.pax %></p>
+              <p>Availability:<%= @spaceship.availability %> </p>
+              <p>Description: Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit,
+              sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, </p>
         </div>
 
-        <div class="row bg-info row-book-form">
-          <h3>Make your booking</h3>
+        <div class="row row-book-form">
+        <br><br><br>
+          <h3><strong>Make your booking</strong></h3>
           <div class="col-md-6 book-form">
             <%= form_with model: @booking do |f| %>
               <h4> <%= current_user.first_name %>, enter your info.</h4>
@@ -56,11 +49,13 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
-        <%# <%= image_tag (@spaceship.photo), class: "style-image"%> %>
+      
+      <div class="col">
+        <%= image_tag (@spaceship.photo), height: 400, crop: :fill %>
+
       </div>
     </div>
-  </div>
+</div>
 
   <br>
 

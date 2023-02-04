@@ -16,6 +16,7 @@
     <%= cl_image_tag spaceship.photo.key, height: 300, width: 300, crop: :fill, class: "index-spaceship-image" unless spaceship.photo.key.nil? %>
     </div>
 
+
     <div class="col">
 
       <h3 class="card-title"><%= spaceship.name %></h3>
@@ -27,6 +28,7 @@
       <br>
 
       <%= link_to "Info", spaceship_path(spaceship), class: "button-main" %>
+      <br>
       <br>
         </div>
       </div>

@@ -4,6 +4,8 @@
     </div>
     <div class="clear"></div>
 
+    </header>
+
 <div class="container">
     <div class="row mt-5 justify-content-md-left">
     <% @destinations.each do |destination| %>
@@ -23,8 +25,10 @@
       <p class="card-text text-muted">Last booked 5 minutes ago.</p>
       <br>
 
+
       <%= link_to "Info", destination_path(destination), class: "button-outline" %>
       <%= link_to "Choose Spaceship First", new_booking_path, class: "button-main" %>
+      <br>
       <br>
         </div>
       </div>
