@@ -1,20 +1,38 @@
+<header>
+    <div class="header-banner">
+    <div class="centered">Bookings</div>
+    </div>
+    <div class="clear"></div>
+
+</header>
+
+
+<div class="col d-flex justify-content-center">
+<div class="card" style="width: 50rem;">
 <div class="container text-center">
   <ul class="text-center">
     <h1> <%= current_user.first_name %>, viewing your bookings</h1>
     <% @bookings.each do |booking| %>
       <% if (current_user.id == booking.user_id) %>
-        <li>Destination: <%= booking.id %></li>
+        <div class="card-body">
+        <p>Destination: <%= booking.id %></p>
         <% @destinations.each do |destination| %>
           <% if booking.destination_id == destination.id %>
-            <li>Destination name: <%= destination.name %></li>
+            <p>Destination name: <%= destination.name %></p>
           <% end %>
         <% end %>
-        <li>Departure Date: <%= booking.departure_date %></li>
-        <li>Return Date: <%= booking.return_date %></li>
-        <li><%= booking.id %></li>
+        <p>Departure Date: <%= booking.departure_date %></p>
+        <p>Return Date: <%= booking.return_date %></p>
+        <p><%= booking.id %></p>
       <% end %>
     <% end %>
   </ul>
-  <%= link_to "Make a booking", new_booking_path, class:"btn btn-primary" %>
+  </div>
+   </div>
+   </div>
+
+
+  <br>
+  <%= link_to "Make a booking", new_booking_path, class:"btn btn-dark" %>
   <%= link_to "Back to homepage", root_path, class:"btn btn-outline-dark"%>
 </div>
