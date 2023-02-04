@@ -8,7 +8,6 @@
     <%= f.label :price %>
     <%= f.number_field :price, placeholder: "$"%> <br>
     <%= f.label :photo %> <br>
-    <%= f.input :photo, as: :file
     <%= f.file_field :photo, accept: 'image/png,image/jpeg' %> <br>
     <%= f.submit %>
   <% end %>
