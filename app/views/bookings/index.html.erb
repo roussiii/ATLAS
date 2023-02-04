@@ -17,7 +17,7 @@
             </div>
 
             <div class="col">
-              <h3 class="card-title">Trip to: <%= destination.name %></h3>
+              <h3 class="card-title">Trip to: <%= booking.id %></h3>
               <p class="card-text">Price: <%= booking.price %></p>
               <p class="card-text">Departure Date: <%= booking.departure_date %></p>
               <p class="card-text">Return Date: <%= booking.return_date %></p>
@@ -25,7 +25,7 @@
               <p class="card-text">Cargaizon allowace: <%= booking.payload %></p>
               <p class="card-text text-muted">Last booked 3 minutes ago.</p>
               <br>
-              <%= link_to "Info", booking_path(booking), class: "button-main" %>
+              <%= link_to "Book", booking_path(booking), class: "button-main" %>
               <br>
               <br>
             </div>
