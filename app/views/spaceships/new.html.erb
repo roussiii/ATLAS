@@ -14,6 +14,7 @@
     <%= f.label :description, class: "col-md-4 control-label" %> <br>
     <%= f.text_field :description %> <br>
     <%= f.label :photo %> <br>
+    <%= f.input :photo, as: :file %>
     <%= f.file_field :photo, accept: 'image/png,image/jpeg' %> <br>
     <%= f.submit %>
   </div>
